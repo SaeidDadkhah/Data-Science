@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "print(\"Check rankHospital function existence...\")\nif (!exists(\"rankHospital\", mode = \"function\")) {\n    print(\"Sourcing rankHospital.R file!\")\n    source(\"rankHospital.R\")\n}\n\nprint(\"Start testing rankHospital.R\")\nprint(rankHospital(\"TX\", \"heart failure\", 4))\n# Answer: \"DETAR HOSPITAL NAVARRO\"\n\nprint(rankHospital(\"MD\", \"heart attack\", \"worst\"))\n# Answer: \"HARFORD MEMORIAL HOSPITAL\"\n\nprint(rankHospital(\"MN\", \"heart attack\", 5000))\n# Answer: NA\n",
+    "created" : 1472232244240.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2153994197",
+    "id" : "1A2200E9",
+    "lastKnownWriteTime" : 1472232877,
+    "last_content_update" : 1472232877215,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/02. R Programming/Assignments of Week 04/rankHospitalTest.R",
+    "project_path" : "rankHospitalTest.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

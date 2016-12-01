@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "rankAll <- function(outcome, num = \"best\") {\n    ## Read outcome data\n    data <- read.csv(\"outcome-of-care-measures.csv\", colClasses = \"character\")\n    \n    ## Check that outcome is valid\n    columns <- names(data)\n    if (identical(outcome, \"heart attack\")) {\n        columns <- columns[c(2, 7, 11)]\n    } else if (identical(outcome, \"heart failure\")) {\n        columns <- columns[c(2, 7, 17)]\n    } else if (identical(outcome, \"pneumonia\")) {\n        columns <- columns[c(2, 7, 23)]\n    } else {\n        stop(\"invalid outcome\")\n    }\n    \n    ## Preprocess data\n    usableData <- data\n    suppressWarnings(\n        usableData[, columns[3]] <- as.numeric(usableData[, columns[3]]))\n    ### Handle warning\n    usableData <- usableData[!is.na(usableData[columns[3]]), columns]\n    \n    ## For each state, find the hospital of the given rank\n    splitted <- split(usableData, usableData$State)\n    usableData <- lapply(splitted, function(curData) {\n        ### Check if num is valid rank\n        if (num == \"best\") {\n            num = 1\n        } else if (num == \"worst\") {\n            num = nrow(curData)\n        } else if (num > nrow(curData)) {\n            return(NA)\n        }\n        \n        ### Rank hospitals\n        curData <- curData[order(curData[, 3], curData[, 1]), ]\n        \n        curData[num, c(1, 2)]\n    })\n    \n    ## Return a data frame with the hospital names and the (abbreviated) state name\n    usableData\n}\n",
+    "created" : 1472232880525.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2941152057",
+    "id" : "CEF2DD88",
+    "lastKnownWriteTime" : 1472241745,
+    "last_content_update" : 1472241745711,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/02. R Programming/Assignments of Week 04/rankAll.R",
+    "project_path" : "rankAll.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

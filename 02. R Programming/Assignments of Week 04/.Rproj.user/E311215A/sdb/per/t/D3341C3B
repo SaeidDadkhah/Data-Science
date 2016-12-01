@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "print(\"Check best function existence...\")\nif (!exists(\"best\", mode = \"function\")) {\n    print(\"Sourcing best.R file!\")\n    source(\"best.R\")\n}\n\nprint(\"Start testing best.R\")\nprint(best(\"TX\", \"heart attack\"))\n# Answer: CYPRESS FAIRBANKS MEDICAL CENTER\n\nprint(best(\"TX\", \"heart failure\"))\n# Answer: FORT DUNCAN MEDICAL CENTER\n\nprint(best(\"MD\", \"heart attack\"))\n# Answer: JOHNS HOPKINS HOSPITAL, THE\n\nprint(best(\"MD\", \"pneumonia\"))\n# Answer: GREATER BALTIMORE MEDICAL CENTER\n\nbest(\"BB\", \"heart attack\")\n# Answer: Error in best(\"BB\", \"heart attack\") : invalid state\n\nbest(\"NY\", \"hert attack\")\n# Answer: Error in best(\"NY\", \"hert attack\") : invalid outcome\n\n",
+    "created" : 1472232270181.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1686379780",
+    "id" : "D3341C3B",
+    "lastKnownWriteTime" : 1472228556,
+    "last_content_update" : 1472228556,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/02. R Programming/Assignments of Week 04/bestTest.R",
+    "project_path" : "bestTest.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

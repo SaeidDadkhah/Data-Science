@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "print(\"Check rankAll function existence...\")\nif (!exists(\"rankAll\", mode = \"function\")) {\n    print(\"Sourcing rankAll.R file!\")\n    source(\"rankAll.R\")\n}\n\nprint(\"Start testing rankAll.R\")\nprint(head(rankAll(\"heart attack\", 20), 10))\n# Answer:      hospital state\n#      AK <NA> AK\n#      AL D W MCMILLAN MEMORIAL HOSPITAL AL\n#      AR ARKANSAS METHODIST MEDICAL CENTER AR\n#      AZ JOHN C LINCOLN DEER VALLEY HOSPITAL AZ\n#      CA SHERMAN OAKS HOSPITAL CA\n#      CO SKY RIDGE MEDICAL CENTER CO\n#      CT MIDSTATE MEDICAL CENTER CT\n#      DC <NA> DC\n#      DE <NA> DE\n#      FL SOUTH FLORIDA BAPTIST HOSPITAL FL\n\nprint(tail(rankAll(\"pneumonia\", \"worst\"), 3))\n# Answer:       hospital state\n#      WI MAYO CLINIC HEALTH SYSTEM - NORTHLAND, INC WI\n#      WV PLATEAU MEDICAL CENTER WV\n#      WY NORTH BIG HORN HOSPITAL DISTRICT WY\n\nprint(tail(rankAll(\"heart failure\"), 10))\n# Answer:       hospital state\n#      TN WELLMONT HAWKINS COUNTY MEMORIAL HOSPITAL TN\n#      TX FORT DUNCAN MEDICAL CENTER TX\n#      UT VA SALT LAKE CITY HEALTHCARE - GEORGE E. WAHLEN VA MEDICAL CENTER UT\n#      VA SENTARA POTOMAC HOSPITAL VA\n#      VI GOV JUAN F LUIS HOSPITAL & MEDICAL CTR VI\n#      VT SPRINGFIELD HOSPITAL VT\n#      WA HARBORVIEW MEDICAL CENTER WA\n#      WI AURORA ST LUKES MEDICAL CENTER WI\n#      WV FAIRMONT GENERAL HOSPITAL WV\n#      WY CHEYENNE VA MEDICAL CENTER WY\n",
+    "created" : 1472239165756.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4293178905",
+    "id" : "8C43A2C6",
+    "lastKnownWriteTime" : 1472241685,
+    "last_content_update" : 1472241685900,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/02. R Programming/Assignments of Week 04/rankAllTest.R",
+    "project_path" : "rankAllTest.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

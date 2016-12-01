@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "best <- function(state, outcome) {\n    ## Read outcome data\n    data <- read.csv(\"outcome-of-care-measures.csv\", colClasses = \"character\")\n    \n    ## Check that state and outcome are valid\n    if (!is.element(state, data$State)) {\n        stop(\"invalid state\")\n    }\n    \n    columns <- names(data)\n    if (identical(outcome, \"heart attack\")) {\n        columns <- columns[c(2, 11)]\n    } else if (identical(outcome, \"heart failure\")) {\n        columns <- columns[c(2, 17)]\n    } else if (identical(outcome, \"pneumonia\")) {\n        columns <- columns[c(2, 23)]\n    } else {\n        stop(\"invalid outcome\")\n    }\n    \n    ## Preprocess data\n    usableData <- data[data$State == state, ]\n    suppressWarnings(usableData[, columns[2]] <- as.numeric(usableData[, columns[2]]))\n    usableData <- usableData[!is.na(usableData[columns[2]]), columns]\n    \n    ## Select best hospital\n    usableData <- usableData[min(usableData[, columns[2]]) == usableData[columns[2]], columns[1]]\n    \n    ## Select the first hospital alphabetically\n    usableData <- usableData[min(usableData) == usableData]\n    \n    ## Return hospital name in that state with lowest 30-day death\n    ## rate\n    usableData\n}\n",
+    "created" : 1471980066542.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3774024157",
+    "id" : "32BE53D9",
+    "lastKnownWriteTime" : 1472237475,
+    "last_content_update" : 1472237475714,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/02. R Programming/Assignments of Week 04/best.R",
+    "project_path" : "best.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

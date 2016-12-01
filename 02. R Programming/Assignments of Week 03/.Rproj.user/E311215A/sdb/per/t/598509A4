@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "if (!exists(\"makeCacheMatrix\", mode = \"function\")) {\n    print(\"Sourcing cachematrix.R file!\")\n    source(\"cachematrix.R\")\n}\n\nprint(\"checking cachematrix.R\")\n\nmat <- matrix(rnorm(9), nrow = 3, ncol = 3)\ncachedMatrix <- makeCacheMatrix(mat)\ncacheSolve(cachedMatrix)\ncacheSolve(cachedMatrix)\n",
+    "created" : 1471734215277.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "259629817",
+    "id" : "598509A4",
+    "lastKnownWriteTime" : 1471734498,
+    "last_content_update" : 1471734498274,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/02. R Programming/Assignments of Week 03/testcachematrix.R",
+    "project_path" : "testcachematrix.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

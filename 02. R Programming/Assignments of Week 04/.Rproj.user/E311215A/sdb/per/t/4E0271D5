@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# read data from \"outcome-of-care-measures.csv\"\noutcome <- read.csv(\"outcome-of-care-measures.csv\", colClasses = \"character\")\n\n# coerce column 11 from character to numeric\noutcome[, 11] <- as.numeric(outcome[, 11])\n\n# plot histogram of mortality rates\nhist(outcome[, 11])\n",
+    "created" : 1471979731386.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "131944210",
+    "id" : "4E0271D5",
+    "lastKnownWriteTime" : 1471980008,
+    "last_content_update" : 1471980008918,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/02. R Programming/Assignments of Week 04/PlotMortalityRates.R",
+    "project_path" : "PlotMortalityRates.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
