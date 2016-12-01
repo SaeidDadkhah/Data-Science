@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Make a plot (possibly multi-panel) that answers the question:\n# how does the relationship between mean covered charges (Average.Covered.Charges) and\n# mean total payments (Average.Total.Payments) vary by medical condition (DRG.Definition)\n# and the state in which care was received (Provider.State)?\n\n# Load ggplot library\nlibrary(ggplot2)\n\n# Read data\npayments <- read.csv(\"payments.csv\", header = TRUE)\n\nlevels(payments$DRG.Definition) <- c(\"194\", \"292\", \"392\", \"641\", \"690\", \"871\")\n\nplot <- ggplot(payments, aes(log10(Average.Covered.Charges), log10(Average.Total.Payments))) +\n    geom_point(alpha = 0.1, color = \"green4\") +\n    geom_smooth(method = \"lm\", color = \"brown\", size = 0.7) +\n    facet_grid(DRG.Definition ~ Provider.State) +\n    labs(title = \"Covered Charges vs. Total Payments by Provider State and Medical Condition\") +\n    labs(x = \"Covered Charges\", y = \"Total Payments\")\n\npdf(\"Plot2.pdf\")\nprint(plot)\ndev.off()\n",
+    "created" : 1479823328387.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1555317892",
+    "id" : "E6EE1CC",
+    "lastKnownWriteTime" : 1480336093,
+    "last_content_update" : 1480336093293,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/05. Reproducible Research/Assignments of Week 01/Plotting Practice/Answer02.R",
+    "project_path" : "Answer02.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

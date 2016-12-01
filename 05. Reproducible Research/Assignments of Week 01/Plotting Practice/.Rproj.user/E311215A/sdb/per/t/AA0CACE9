@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Make a plot that answers the question:\n#   what is the relationship between mean covered charges (Average.Covered.Charges) and\n#   mean total payments (Average.Total.Payments) in New York? \n\n# Load ggplot library\nlibrary(ggplot2)\n\n# Read data\npayments <- read.csv(\"payments.csv\", header = TRUE)\n\n# Subset data related to NY\nnyPayments <- subset(payments, Provider.State == 'NY')\n\nplot <- ggplot(nyPayments, aes(log10(Average.Covered.Charges), log10(Average.Total.Payments))) +\n    geom_point(alpha = 0.5, shape = 19, color = \"green4\") +\n    geom_smooth(method = \"lm\", color = \"brown\") +\n    labs(title = \"Covered Charges vs. Total Payments in New York\") +\n    labs(x = \"Covered Charges\", y = \"Total Payments\")\n\npdf(\"Plot1.pdf\")\nprint(plot)\ndev.off()\n",
+    "created" : 1479813055425.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "615640454",
+    "id" : "AA0CACE9",
+    "lastKnownWriteTime" : 1480336894,
+    "last_content_update" : 1480336894135,
+    "path" : "D:/MOOC/Data Science - Johns Hopkins University/05. Reproducible Research/Assignments of Week 01/Plotting Practice/Answer01.R",
+    "project_path" : "Answer01.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
