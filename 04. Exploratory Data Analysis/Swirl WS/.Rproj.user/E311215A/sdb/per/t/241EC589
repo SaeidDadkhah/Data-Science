@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "par(mfrow=c(1, 2), mar = c(5, 4, 1, 1))\nplot(sub1[, 1], col = sub1$activity, ylab = names(sub1)[1])\nplot(sub1[, 2], col = sub1$activity, ylab = names(sub1)[2])\nlegend(\"bottomright\",legend=unique(sub1$activity),col=unique(sub1$activity), pch = 1)\npar(mfrow=c(1,1))\n",
+    "created" : 1478519467447.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4129748570",
+    "id" : "241EC589",
+    "lastKnownWriteTime" : 1472639915,
+    "last_content_update" : 1472639915,
+    "path" : "~/R/win-library/3.3/swirl/Courses/Exploratory_Data_Analysis/Clustering_Example/showXY.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
